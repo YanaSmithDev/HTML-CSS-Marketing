@@ -99,7 +99,14 @@ body {
   bottom: 0;
   left: 0;
 }
-
+.header__top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 5;
+}
 .top-inner {
   padding-bottom: 29px;
   display: flex;
@@ -140,8 +147,9 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: calc(100vh - 93px);
+  /* min-height: calc(100vh - 93px); */
   font-family: "Montserrat", sans-serif;
+  margin-top: 93px;
 }
 
 .content-inner{
@@ -336,7 +344,7 @@ body {
 }
 
 .portfolio__filter-btn {
-  margin-right: 40px;
+  margin-right: 65px;
 }
 
 .portfolio__btn {
@@ -350,8 +358,11 @@ body {
   text-transform: uppercase;
   padding: 0 4px 5px;
   transition: all .5s;
-  margin-right: 25px;
   outline-color:#FCBB08 ;
+}
+
+.portfolio__btn + .portfolio__btn {
+  margin-left: 25px;
 }
 
 .mixitup-control-active{
@@ -423,6 +434,7 @@ body {
   font-size: 18px;
   line-height: 36px;
   color: #242121;
+  padding: 0 10px;
 }
 
 .blockquote__author {
@@ -772,7 +784,23 @@ ul.footer__social {
 
   .magic__title {
     padding-top: 43px;
-}
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slider-blog__item {
+    padding: 120px 60px;
+  }
+  
+  ul.slick-dots {
+    margin-left: 60px;
+  }
 }
 
 
@@ -780,21 +808,49 @@ ul.footer__social {
 
 @media (max-width: 1190px) {
   .about,
-  .expertise {
+  .expertise,
+  .portfolio,
+  .slider-blog,
+  .team,
+  .pricing,
+  .connection {
     padding: 75px 0;
+  }
+
+  .top-inner {
+    padding-bottom: 5px;
   }
   
   .about__inner {
     display: block;
   }
+
   .about__title,
-  .expertise__title {
+  .expertise__title,
+  .team__title,
+  .connection__title {
     margin-bottom: 50px;
   }
 
   .about__text p {
     max-width: 100%;
   }
+
+  .portfolio__filter-btn {
+    margin-right: 0;
+  }
+
+  .team__inner,
+  .pricing__items,
+  .clients__list {
+    column-gap: 20px;
+  }
+
+  .pricing__items {
+    margin-top: 50px;
+  }
+
+ 
 }
 
 /* 992px */
@@ -830,6 +886,51 @@ ul.footer__social {
   .magic__title{
     margin-bottom: 50px;
   }
+
+  .portfolio__content {
+    column-count: 3;
+    margin-bottom: 40px;
+  }
+
+  .portfolio__top {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .portfolio__filter-btn {
+    margin-top: 40px;
+  }
+
+  .connection {
+    background-image: none;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .footer__top {
+    padding-top: 75px;
+  }
+
+  .footer__logo {
+    margin-bottom: 40px;
+  }
+
+  ul.footer__social {
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer__social-list{
+    width: 33.333%;
+    margin-bottom: 25px;
+  }
+
+  .footer__social-list + .footer__social-list {
+    margin-left: 0;
+  }
+
 }
 
 /* 768px */
@@ -910,6 +1011,88 @@ ul.footer__social {
     font-size: 48px;
     line-height: 60px;
   }
+
+  .portfolio__content {
+    column-count: 2;
+  }
+
+  .portfolio__btn {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .portfolio__btn + .portfolio__btn {
+    margin-left: 0;
+  }
+
+  .portfolio__add {
+    margin-bottom: 40px;
+  }
+
+  .blockquote {
+    margin-bottom: 40px;
+  }
+
+  .portfolio__video {
+    margin-bottom: 75px;
+  }
+
+  .portfolio__numbers {
+    flex-wrap: wrap;
+  }
+
+  .portfolio__numbers-item {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+
+  .slider-blog__item {
+    padding: 40px 0;
+  }
+  
+  ul.slick-dots {
+    margin-left: 0;
+  }
+
+  .slider-blog__item-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .pricing__items {
+    display: block;
+  }
+
+  ul.pricing__item {
+    margin: 0 auto 25px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .clients__list {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .clients__list li {
+    margin-bottom: 25px;
+  }
+}
+
+/* 640px */
+@media (max-width: 640px) {
+  .team__inner {
+    display: block;
+  }
+
+  .team__item {
+    margin-bottom: 25px;
+    
+  }
+  .team__item img {
+    margin: 0 auto ;
+  }
+
 }
 
 /* 440px */
@@ -928,8 +1111,15 @@ ul.footer__social {
   .about__title{
     font-size: 28px;
     line-height: 42px;
-}
+  }
 
+  .portfolio__numbers-item {
+    width: 100%;
+  }
+
+  .footer__social-list {
+    width: 50%;
+  }
 }
 
 /* 340px */
